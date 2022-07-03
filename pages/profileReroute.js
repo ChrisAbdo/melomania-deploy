@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import "tw-elements";
-import { Button, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Text,
+  TableContainer,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  TableCaption,
+  Tfoot,
+} from "@chakra-ui/react";
 import moment from "moment";
 
 class Profile extends Component {
@@ -92,6 +104,64 @@ class Profile extends Component {
               );
             }
           })}
+        </div>
+        <div class="border-b border-gray-500">
+          <Text
+            className="
+          text-center
+          text-xl
+          font-bold
+          mb-2
+          mt-2
+          border-t border-gray-500
+        "
+          >
+            Post Stats
+          </Text>
+
+          {/* if this account is equal to the image author, display the likes and tips for each post*/}
+
+          <TableContainer>
+            <Table variant="simple">
+              <Thead>
+                <Tr>
+                  <Th>Post Name</Th>
+                  <Th>Tips</Th>
+                  <Th isNumeric>Likes</Th>
+                </Tr>
+              </Thead>
+              {this.props.images.map((image, key) => {
+                if (image.author === this.props.account) {
+                  return (
+                    <>
+                      <Tbody>
+                        <Tr>
+                          <Td>
+                            {image.description.length > 33
+                              ? image.description.substring(0, 33) + "..."
+                              : image.description}
+                          </Td>
+                          <Td>
+                            {window.web3.utils.fromWei(
+                              image.tipAmount.toString(),
+                              "Ether"
+                            )}
+                            {" ETH "}
+                          </Td>
+                          <Td isNumeric>
+                            {window.web3.utils.fromWei(
+                              image.likeCount.toString(),
+                              "Ether"
+                            ) * 100}
+                          </Td>
+                        </Tr>
+                      </Tbody>
+                    </>
+                  );
+                }
+              })}
+            </Table>
+          </TableContainer>
         </div>
       </div>
     );

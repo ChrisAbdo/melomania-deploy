@@ -14,6 +14,7 @@ contract Melomania {
         address payable author;
         uint256 likeCount;
         uint256 uploadTime;
+        uint256 totalLikesCount;
     }
 
     event ImageCreated(
@@ -23,7 +24,8 @@ contract Melomania {
         uint256 tipAmount,
         address payable author,
         uint256 likeCount,
-        uint256 uploadTime
+        uint256 uploadTime,
+        uint256 totalLikesCount
     );
 
     event ImageTipped(
@@ -33,7 +35,8 @@ contract Melomania {
         uint256 tipAmount,
         address payable author,
         uint256 likeCount,
-        uint256 uploadTime
+        uint256 uploadTime,
+        uint256 totalLikesCount
     );
 
     event ImageLiked(
@@ -43,7 +46,8 @@ contract Melomania {
         uint256 tipAmount,
         address payable author,
         uint256 likeCount,
-        uint256 uploadTime
+        uint256 uploadTime,
+        uint256 totalLikesCount
     );
 
     constructor() {
@@ -71,7 +75,8 @@ contract Melomania {
             0,
             payable(msg.sender),
             0,
-            block.timestamp
+            block.timestamp,
+            0
         );
         // Trigger an event
         emit ImageCreated(
@@ -81,7 +86,8 @@ contract Melomania {
             0,
             payable(msg.sender),
             0,
-            block.timestamp
+            block.timestamp,
+            0
         );
     }
 
@@ -106,7 +112,8 @@ contract Melomania {
             _image.tipAmount,
             _author,
             _image.likeCount,
-            _image.uploadTime
+            _image.uploadTime,
+            _image.totalLikesCount
         );
     }
 
@@ -127,7 +134,14 @@ contract Melomania {
             _image.tipAmount,
             _author,
             _image.likeCount,
-            _image.uploadTime
+            _image.uploadTime,
+            _image.totalLikesCount
         );
+    }
+
+    function trackLikes(uint256 _id) public view returns (uint256) {
+        require(_id > 0 && _id <= imageCount);
+        Image memory _image = images[_id];
+        return _image.totalLikesCount;
     }
 }

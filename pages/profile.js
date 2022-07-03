@@ -111,6 +111,8 @@ class profileRerouter extends Component {
       });
   }
 
+  trackLikes(id) {}
+
   constructor(props) {
     super(props);
     this.state = {
@@ -123,6 +125,7 @@ class profileRerouter extends Component {
     this.uploadImage = this.uploadImage.bind(this);
     this.tipImageOwner = this.tipImageOwner.bind(this);
     this.captureFile = this.captureFile.bind(this);
+    this.trackLikes = this.trackLikes.bind(this);
   }
   render() {
     return (
@@ -142,6 +145,7 @@ class profileRerouter extends Component {
               uploadImage={this.uploadImage}
               tipImageOwner={this.tipImageOwner}
               account={this.state.account}
+              trackLikes={this.trackLikes}
             />
           </>
         )}
