@@ -31,14 +31,14 @@ class Profile extends Component {
         >
           My Uploads
         </Text>
-        <div className="mt-2 flex flex-nowrap justify-center overflow-x-auto">
+        <div className="mt-2 flex flex-nowrap justify-center overflow-x-auto snap-mandatory	snap-center">
           {/* if account name is equal to the image author, display the post */}
           {this.props.images.map((image, key) => {
             if (image.author === this.props.account) {
               return (
                 <div
                   key={key}
-                  className="  rounded-2xl mr-2 mb-2 border border-gray-500 "
+                  className="  rounded-2xl mr-2 mb-2 border border-gray-500 vsnap-mandatory snap-center"
                   id="imageList"
                 >
                   <a
