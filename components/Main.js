@@ -56,7 +56,10 @@ class Main extends Component {
                           : image.description}
                       </p>
                     </li>
-                    <li key={key} className="space-x-9 mb-2">
+                    <li
+                      key={key}
+                      className="space-x-9  border-b border-gray-500 mb-2 max-w-xs ml-1"
+                    >
                       <small className="ml-1">
                         TIPS:{" "}
                         {window.web3.utils.fromWei(
@@ -69,8 +72,11 @@ class Main extends Component {
                         size="xs"
                         name={image.id}
                         onClick={(event) => {
+                          let value = prompt(
+                            "How much ETH would you like to tip?"
+                          );
                           let tipAmount = window.web3.utils.toWei(
-                            "0.1",
+                            value,
                             "Ether"
                           );
                           console.log(event.target.name, tipAmount);
@@ -80,38 +86,54 @@ class Main extends Component {
                           );
                         }}
                       >
-                        TIP 0.1 ETH
+                        TIP ETH
                       </Button>
-
-                      <Button
-                        type="button"
-                        size="xs"
-                        onClick={() => {
-                          // replace the id="exampleModalLabel" with the description of the image, do not use state
-                          const modal =
-                            document.getElementById("exampleModalLabel");
-                          modal.innerHTML = "Title: " + image.description;
-                          // replace the id="uploaderInfo" with the description of the image, do not use state
-                          const uploaderInfo =
-                            document.getElementById("uploaderInfo");
-                          uploaderInfo.innerHTML = "Uploader: " + image.author;
-                          // replace the id="ipfsInfo" with https://ipfs.infura.io/ipfs/${image.hash}, do not use state
-                          const ipfsInfo = document.getElementById("ipfsInfo");
-                          ipfsInfo.innerHTML =
-                            "IPFS Hash: https://ipfs.infura.io/ipfs/" +
-                            image.hash;
-                          // replace the id='ipfsInfo' href with href={`https://www.etherscan.io/address/${image.author}`}
-                          const ipfsInfoHref =
-                            document.getElementById("ipfsInfo");
-                          ipfsInfoHref.href = `https://ipfs.infura.io/ipfs/${image.hash}`;
-                        }}
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                      >
+                      <Button type="button" size="xs">
                         More Info
                       </Button>
+                      <br />
+                      <li
+                        key={key}
+                        className="border-t border-gray-500 mt-2 mb-2"
+                      >
+                        <small className="ml-1">
+                          LIKES:{" "}
+                          {/* {window.web3.utils.fromWei(
+                            image.likeCount.toString(),
+                            "Ether"
+                          )}{" "} */}
+                          {/* window.web3.util.fromWei image.likeCount.toString but multiply the value by 100 */}
+                          {window.web3.utils.fromWei(
+                            image.likeCount.toString(),
+                            "Ether"
+                          ) * 100}{" "}
+                        </small>
 
-                      <div
+                        <Button
+                          className="opacity-0 cursor-move"
+                          type="button"
+                          size="xs"
+                        >
+                          More Info
+                        </Button>
+                        <Button
+                          size="xs"
+                          name={image.id}
+                          onClick={(event) => {
+                            let likeCount = window.web3.utils.toWei(
+                              "0.01",
+                              "Ether"
+                            );
+                            console.log(event.target.name, likeCount);
+                            this.props.likeImage(event.target.name, likeCount);
+                          }}
+                        >
+                          Like❤️
+                        </Button>
+                        <br />
+                      </li>
+
+                      {/*<div
                         class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto  border-gray-500"
                         id="exampleModal"
                         tabindex="-1"
@@ -157,6 +179,7 @@ class Main extends Component {
                           </div>
                         </div>
                       </div>
+                      </div>*/}
                     </li>
                   </ul>
                 </div>

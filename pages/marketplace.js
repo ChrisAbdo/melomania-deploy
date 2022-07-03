@@ -112,6 +112,17 @@ class Marketplace extends Component {
       });
   }
 
+  likeImage(id, likeCount) {
+    this.setState({ loading: true });
+    this.state.melomania.methods
+      .likeImage(id)
+      .send({ from: this.state.account, value: likeCount })
+      .on("transactionHash", (hash) => {
+        this.setState({ loading: false });
+        window.location.reload();
+      });
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -124,6 +135,7 @@ class Marketplace extends Component {
     this.uploadImage = this.uploadImage.bind(this);
     this.tipImageOwner = this.tipImageOwner.bind(this);
     this.captureFile = this.captureFile.bind(this);
+    this.likeImage = this.likeImage.bind(this);
   }
   render() {
     return (
@@ -155,6 +167,7 @@ class Marketplace extends Component {
               uploadImage={this.uploadImage}
               tipImageOwner={this.tipImageOwner}
               account={this.state.account}
+              likeImage={this.likeImage}
             />
           </>
         )}
