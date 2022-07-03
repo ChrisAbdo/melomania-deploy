@@ -21,31 +21,33 @@ class Home extends Component {
         <main>
           <div className={styles.welcomeText}>
             <Navbar />
-            <Text
-              fontSize="6xl"
-              fontWeight="extrabold"
-              className={styles.welcomeText}
-            >
-              Welcome to 0xChange
-            </Text>
-            <Text
-              fontSize="3xl"
-              fontWeight="extrabold"
-              className={styles.welcomeText}
-            >
-              a one of a kind multi-chain wallet and exchange
-            </Text>
-            <Text
-              fontSize="3xl"
-              fontWeight="extrabold"
-              className={styles.welcomeText}
-            >
-              get started by connecting your wallet{" "}
-            </Text>
-            <div className="mt-6">
-              <Link href="/marketplace">
-                <Button>Marketplace</Button>
-              </Link>
+            <div className="flex flex-col items-center justify-center h-screen">
+              <Text
+                fontSize="6xl"
+                fontWeight="extrabold"
+                className={styles.welcomeText}
+              >
+                Welcome to 0xChange
+              </Text>
+              <Text
+                fontSize="3xl"
+                fontWeight="extrabold"
+                className={styles.welcomeText}
+              >
+                a one of a kind multi-chain wallet and exchange
+              </Text>
+              <Text
+                fontSize="3xl"
+                fontWeight="extrabold"
+                className={styles.welcomeText}
+              >
+                get started by connecting your wallet{" "}
+              </Text>
+              <div className="mt-6">
+                <Link href="/marketplace">
+                  <Button>Marketplace</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </main>

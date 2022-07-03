@@ -4,6 +4,7 @@ import Navbar from "../components/HomeNavbar";
 import Web3 from "web3";
 import { Modal } from "@chakra-ui/react";
 import Profile from "./profileReroute";
+import styles from "../styles/profileRerouter.module.css";
 
 //Declare IPFS
 const ipfsClient = require("ipfs-http-client");
@@ -128,11 +129,10 @@ class profileRerouter extends Component {
       <div>
         <Navbar account={this.state.account} />
         {this.state.loading ? (
-          <div
-            id="loader"
-            className="flex items-center justify-content text-center mt-5"
-          >
-            <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+          <div className="flex flex-col items-center justify-center h-screen">
+            <div class="w-32 h-32 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+            <h1 class={styles.loadingText}>Loading...</h1>
+            <progress class="progress w-56"></progress>
           </div>
         ) : (
           <>
