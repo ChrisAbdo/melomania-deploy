@@ -123,6 +123,10 @@ class Marketplace extends Component {
       });
   }
 
+  setSidenav = (sidenav) => {
+    this.setState({ sidenav });
+  };
+
   constructor(props) {
     super(props);
     this.state = {

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Identicon from "identicon.js";
 import styles from "../styles/Main.module.css";
 import { Button, Link } from "@chakra-ui/react";
-import Modal from "./Modal";
+import Sidenav from "./Sidenav";
+import DrawerExample from "./Sidenav";
 
 class Main extends Component {
   render() {
@@ -92,47 +93,43 @@ class Main extends Component {
                         More Info
                       </Button>
                       <br />
-                      <li
-                        key={key}
-                        className="border-t border-gray-500 mt-2 mb-2"
-                      >
-                        <small className="ml-1">
-                          LIKES:{" "}
-                          {/* {window.web3.utils.fromWei(
+                    </li>
+                    <li
+                      key={key}
+                      className="space-x-12  mb-2 max-w-xs ml-1 mt-2"
+                    >
+                      <small className="ml-1">
+                        LIKES:{" "}
+                        {/* {window.web3.utils.fromWei(
                             image.likeCount.toString(),
                             "Ether"
                           )}{" "} */}
-                          {/* window.web3.util.fromWei image.likeCount.toString but multiply the value by 100 */}
-                          {window.web3.utils.fromWei(
-                            image.likeCount.toString(),
+                        {/* window.web3.util.fromWei image.likeCount.toString but multiply the value by 100 */}
+                        {window.web3.utils.fromWei(
+                          image.likeCount.toString(),
+                          "Ether"
+                        ) * 100}{" "}
+                      </small>
+
+                      <Button
+                        size="xs"
+                        name={image.id}
+                        onClick={(event) => {
+                          let likeCount = window.web3.utils.toWei(
+                            "0.01",
                             "Ether"
-                          ) * 100}{" "}
-                        </small>
+                          );
+                          console.log(event.target.name, likeCount);
+                          this.props.likeImage(event.target.name, likeCount);
+                        }}
+                      >
+                        Like❤️
+                      </Button>
 
-                        <Button
-                          className="opacity-0 cursor-move"
-                          type="button"
-                          size="xs"
-                        >
-                          More Info
-                        </Button>
-                        <Button
-                          size="xs"
-                          name={image.id}
-                          onClick={(event) => {
-                            let likeCount = window.web3.utils.toWei(
-                              "0.01",
-                              "Ether"
-                            );
-                            console.log(event.target.name, likeCount);
-                            this.props.likeImage(event.target.name, likeCount);
-                          }}
-                        >
-                          Like❤️
-                        </Button>
-                        <br />
-                      </li>
-
+                      <DrawerExample />
+                      <br />
+                    </li>
+                    <>
                       {/*<div
                         class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto  border-gray-500"
                         id="exampleModal"
@@ -180,7 +177,7 @@ class Main extends Component {
                         </div>
                       </div>
                       </div>*/}
-                    </li>
+                    </>
                   </ul>
                 </div>
               </div>
