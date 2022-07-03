@@ -13,6 +13,7 @@ contract Melomania {
         uint256 tipAmount;
         address payable author;
         uint256 likeCount;
+        uint256 uploadTime;
     }
 
     event ImageCreated(
@@ -21,7 +22,8 @@ contract Melomania {
         string description,
         uint256 tipAmount,
         address payable author,
-        uint256 likeCount
+        uint256 likeCount,
+        uint256 uploadTime
     );
 
     event ImageTipped(
@@ -30,7 +32,8 @@ contract Melomania {
         string description,
         uint256 tipAmount,
         address payable author,
-        uint256 likeCount
+        uint256 likeCount,
+        uint256 uploadTime
     );
 
     event ImageLiked(
@@ -39,7 +42,8 @@ contract Melomania {
         string description,
         uint256 tipAmount,
         address payable author,
-        uint256 likeCount
+        uint256 likeCount,
+        uint256 uploadTime
     );
 
     constructor() {
@@ -66,7 +70,8 @@ contract Melomania {
             _description,
             0,
             payable(msg.sender),
-            0
+            0,
+            block.timestamp
         );
         // Trigger an event
         emit ImageCreated(
@@ -75,7 +80,8 @@ contract Melomania {
             _description,
             0,
             payable(msg.sender),
-            0
+            0,
+            block.timestamp
         );
     }
 
@@ -99,7 +105,8 @@ contract Melomania {
             _image.description,
             _image.tipAmount,
             _author,
-            _image.likeCount
+            _image.likeCount,
+            _image.uploadTime
         );
     }
 
@@ -119,7 +126,8 @@ contract Melomania {
             _image.description,
             _image.tipAmount,
             _author,
-            _image.likeCount
+            _image.likeCount,
+            _image.uploadTime
         );
     }
 }

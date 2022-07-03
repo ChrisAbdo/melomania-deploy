@@ -89,14 +89,19 @@ class Main extends Component {
                       >
                         TIP ETH
                       </Button>
-                      <Button type="button" size="xs">
+                      <Button
+                        type="button"
+                        size="xs"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
                         More Info
                       </Button>
                       <br />
                     </li>
                     <li
                       key={key}
-                      className="space-x-12  mb-2 max-w-xs ml-1 mt-2"
+                      className="space-x-14  mb-2 max-w-xs ml-1 mt-2"
                     >
                       <small className="ml-1">
                         LIKES:{" "}
@@ -130,7 +135,7 @@ class Main extends Component {
                       <br />
                     </li>
                     <>
-                      {/*<div
+                      {/* <div
                         class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto  border-gray-500"
                         id="exampleModal"
                         tabindex="-1"
@@ -175,8 +180,7 @@ class Main extends Component {
                             </div>
                           </div>
                         </div>
-                      </div>
-                      </div>*/}
+                      </div> */}
                     </>
                   </ul>
                 </div>
