@@ -29,7 +29,7 @@ function code() {
 
             <nav class="flex flex-col mt-6 space-y-1">
               <a
-                href=""
+                href="#introduction"
                 class="flex items-center px-4 py-2 hover:bg-gray-200  rounded-lg"
               >
                 <svg
@@ -52,32 +52,33 @@ function code() {
                   />
                 </svg>
 
-                <span class="ml-3 text-sm font-medium"> General </span>
+                <span class="ml-3 text-sm font-medium"> introduction </span>
               </a>
+              <a href="#contract-mapping">
+                <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 opacity-75"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
 
-              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-700">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 opacity-75"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-
-                <span class="ml-3 text-sm font-medium"> Teams </span>
-              </summary>
+                  <span class="ml-3 text-sm font-medium"> mapping </span>
+                </summary>
+              </a>
 
               <nav class="mt-1.5 ml-8 flex flex-col"></nav>
 
               <a
-                href=""
+                href="#song-structs"
                 class="flex items-center px-4 py-2  rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <svg
@@ -95,11 +96,11 @@ function code() {
                   />
                 </svg>
 
-                <span class="ml-3 text-sm font-medium"> Billing </span>
+                <span class="ml-3 text-sm font-medium">song structs </span>
               </a>
 
               <a
-                href=""
+                href="#events"
                 class="flex items-center px-4 py-2  rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <svg
@@ -117,27 +118,68 @@ function code() {
                   />
                 </svg>
 
-                <span class="ml-3 text-sm font-medium"> Invoices </span>
+                <span class="ml-3 text-sm font-medium"> events </span>
               </a>
+              <a href="#constructor">
+                <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 opacity-75"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
 
-              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 opacity-75"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+                  <span class="ml-3 text-sm font-medium"> constructor </span>
+                </summary>
+              </a>
+              <a href="#functions">
+                <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 opacity-75"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
 
-                <span class="ml-3 text-sm font-medium"> Account </span>
-              </summary>
+                  <span class="ml-3 text-sm font-medium"> functions </span>
+                </summary>
+              </a>
+              <a href="#final-code">
+                <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5 opacity-75"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+
+                  <span class="ml-3 text-sm font-medium"> final code </span>
+                </summary>
+              </a>
             </nav>
           </div>
 
@@ -159,7 +201,12 @@ function code() {
               melomania.sol
             </Text>
             <OrderedList>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
+              <Heading
+                className="ml-1 mb-1"
+                as="h2"
+                size="xl"
+                id="introduction"
+              >
                 introduction
               </Heading>
               <ListItem className="ml-4">
@@ -176,7 +223,12 @@ pragma solidity ^0.8.0;`}
                   theme={a11yDark}
                 />
               </ListItem>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
+              <Heading
+                className="ml-1 mb-1"
+                as="h2"
+                size="xl"
+                id="contract-mapping"
+              >
                 contract mapping
               </Heading>
               <ListItem className="ml-4">
@@ -199,7 +251,12 @@ pragma solidity ^0.8.0;`}
                   theme={a11yDark}
                 />
               </ListItem>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
+              <Heading
+                className="ml-1 mb-1"
+                as="h2"
+                size="xl"
+                id="song-structs"
+              >
                 song structs
               </Heading>
               <ListItem className="ml-4">
@@ -225,7 +282,7 @@ pragma solidity ^0.8.0;`}
                   theme={a11yDark}
                 />
               </ListItem>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
+              <Heading className="ml-1 mb-1" as="h2" size="xl" id="events">
                 events
               </Heading>
               <ListItem className="ml-4">
@@ -267,7 +324,7 @@ event ImageLiked(
                   theme={a11yDark}
                 />
               </ListItem>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
+              <Heading className="ml-1 mb-1" as="h2" size="xl" id="constructor">
                 constructor
               </Heading>
               <ListItem className="ml-4">
@@ -284,7 +341,7 @@ event ImageLiked(
                   theme={a11yDark}
                 />
               </ListItem>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
+              <Heading className="ml-1 mb-1" as="h2" size="xl" id="functions">
                 functions
               </Heading>
               <ListItem className="ml-4">
@@ -383,8 +440,8 @@ function likeImage(uint256 _id) public payable {
                   theme={a11yDark}
                 />
               </ListItem>
-              <Heading className="ml-1 mb-1" as="h2" size="xl">
-                putting it all together
+              <Heading className="ml-1 mb-1" as="h2" size="xl" id="final-code">
+                final code
               </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
