@@ -16,7 +16,7 @@ import {
 import { chain, createClient, WagmiProvider } from "wagmi";
 
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.localhost, chain.ropsten],
+  [chain.polygon, chain.localhost, chain.ropsten, chain.polygonMumbai],
   [apiProvider.alchemy(process.env.INFURA_ID), apiProvider.fallback()]
 );
 

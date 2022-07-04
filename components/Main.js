@@ -1,11 +1,28 @@
 import React, { Component } from "react";
 import Identicon from "identicon.js";
 import styles from "../styles/Main.module.css";
-import { Button, Link } from "@chakra-ui/react";
+import {
+  Button,
+  Link,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+} from "@chakra-ui/react";
 import Sidenav from "./Sidenav";
 import DrawerExample from "./Sidenav";
 
 class Main extends Component {
+  // run setMainEth on page load
+  componentDidMount() {
+    this.setMainEth();
+  }
+
+  setMainEth() {
+    let replaceToken = document.getElementById("replaceToken");
+    replaceToken.innerHTML = "ETH";
+  }
   render() {
     return (
       // div that only allows 3 posts per row.
@@ -18,9 +35,33 @@ class Main extends Component {
         />
         <script src="https://unpkg.com/flowbite@1.0.0/dist/flowbite.js"></script>
 
-        <h1 className="ml-2">Assorted: Highest Tipped</h1>
+        <div>
+          <Tabs className="border-gray-500" isFitted variant="enclosed">
+            <TabList mb="1em">
+              <Tab
+                onClick={() => {
+                  let replaceToken = document.getElementById("replaceToken");
+                  replaceToken.innerHTML = "ETH";
+                }}
+              >
+                ETHEREUM (ROPSTEN, RINKEBY, GOERLI)
+              </Tab>
+              <Tab
+                onClick={() => {
+                  let replaceToken = document.getElementById("replaceToken");
+                  replaceToken.innerHTML = "MATIC";
+                }}
+              >
+                POLYGON (MUMBAI)
+              </Tab>
+            </TabList>
+          </Tabs>
+        </div>
+        <h1 className=" mt-2 ml-2">Assorted: Highest Tipped</h1>
         <div className="flex flex-wrap justify-center">
           {this.props.images.map((image, key) => {
+            // if user is connected to polygon mumbai, display <h1> tag hello
+
             return (
               <div
                 key={key}
@@ -61,13 +102,13 @@ class Main extends Component {
                       key={key}
                       className="space-x-9  border-b border-gray-500 mb-2 max-w-xs ml-1"
                     >
-                      <small className="ml-1">
+                      <small id="tipSmall" className="ml-1">
                         TIPS:{" "}
                         {window.web3.utils.fromWei(
                           image.tipAmount.toString(),
                           "Ether"
                         )}{" "}
-                        ETH
+                        <small id="replaceToken"> </small>
                       </small>
                       <Button
                         size="xs"
@@ -87,7 +128,7 @@ class Main extends Component {
                           );
                         }}
                       >
-                        TIP ETH
+                        TIP
                       </Button>
                       <Button
                         type="button"
