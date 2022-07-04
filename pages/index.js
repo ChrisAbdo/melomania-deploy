@@ -3,7 +3,11 @@ import Navbar from "../components/HomeNavbar";
 import styles from "../styles/index.module.css";
 import { GiMusicalNotes } from "react-icons/gi";
 import { BiStore } from "react-icons/bi";
-import { SiEthereum } from "react-icons/si";
+import { SiEthereum, SiSolidity } from "react-icons/si";
+import { FiHelpCircle } from "react-icons/fi";
+import { Divider, Link } from "@chakra-ui/react";
+import { BsStack } from "react-icons/bs";
+import { IoStorefront } from "react-icons/io";
 
 function Home() {
   return (
@@ -67,155 +71,118 @@ function Home() {
         >
           <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
             <div class="max-w-lg mx-auto text-center">
-              <h2 class="text-3xl font-bold sm:text-4xl">melomania🎶</h2>
+              {/* <h2 class="text-3xl font-bold sm:text-4xl">melomania🎶</h2> */}
+              <h1 class="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+                melomania
+              </h1>
 
               <p class="mt-4 ">
                 decentralized music marketplace and crowdsourcing platform
               </p>
             </div>
 
-            <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
-              <div
-                class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
-                href="/services/digital-campaigns"
-              >
-                <GiMusicalNotes className="h-7 w-7" />
+            <>
+              <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="cursor-default block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10">
+                  <GiMusicalNotes className="h-7 w-7" />
 
-                <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
-                  explore new music
-                </h3>
+                  <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
+                    explore new music
+                  </h3>
 
-                <p class="mt-1 text-sm  ">
-                  with no genre filter, melomania encourages you to explore new
-                  music through community favorites. you never know, you might
-                  find something you like ;)
-                </p>
+                  <p class="mt-1 text-sm  ">
+                    with no genre filter, melomania encourages you to explore
+                    new music through community favorites. you never know, you
+                    might find something you like ;)
+                  </p>
+                </div>
+
+                <div class="cursor-default block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10">
+                  <BiStore className="h-7 w-7" />
+
+                  <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
+                    marketplace
+                  </h3>
+
+                  <p class="mt-1 text-sm ">
+                    to view and like/tip songs, head over to the marketplace.
+                    this is where you'll be able to upload your own songs as
+                    well
+                  </p>
+                </div>
+
+                <div class="cursor-default block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10">
+                  <SiEthereum className="h-7 w-7" />
+
+                  <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
+                    crowdsourcing
+                  </h3>
+
+                  <p class="mt-1 text-sm ">
+                    we all know its hard being an artist. but the community can
+                    help. post a couple of your songs and potentially get the
+                    funding for your next hit album.
+                  </p>
+                </div>
               </div>
+              <Divider className="mt-8" />
+              <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+                <div
+                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
+                  // on click, redirect to questions page
+                  onClick={() => {
+                    window.location.href = "/questions";
+                  }}
+                >
+                  <FiHelpCircle className="h-7 w-7" />
 
-              <div
-                class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
-                href="/services/digital-campaigns"
-              >
-                <BiStore className="h-7 w-7" />
+                  <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
+                    questions?
+                  </h3>
 
-                <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
-                  marketplace
-                </h3>
+                  <p class="mt-1 text-sm ">
+                    view this page for any questions you may have questions
+                    about melomania. contact me through this page!
+                  </p>
+                </div>
 
-                <p class="mt-1 text-sm ">
-                  to view and like/tip songs, head over to the marketplace. this
-                  is where you'll be able to upload your own songs as well
-                </p>
+                <div
+                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
+                  onClick={() => {
+                    window.location.href = "/smart-contract";
+                  }}
+                >
+                  <SiSolidity className="h-7 w-7" />
+
+                  <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
+                    developers / smart contract
+                  </h3>
+
+                  <p class="mt-1 text-sm ">
+                    for any devs out there who want to view the smart contract,
+                    heres the place :)
+                  </p>
+                </div>
+
+                <div
+                  onClick={() => {
+                    window.location.href = "/tech-stack";
+                  }}
+                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
+                >
+                  <BsStack className="h-7 w-7" />
+
+                  <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
+                    view the stack
+                  </h3>
+
+                  <p class="mt-1 text-sm ">
+                    find out how melomania was created and how everything
+                    connects
+                  </p>
+                </div>
               </div>
-
-              <div
-                class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
-                href="/services/digital-campaigns"
-              >
-                <SiEthereum className="h-7 w-7" />
-
-                <h3 class="mt-4  text-xl font-bold border-b border-gray-500 ">
-                  crowdsourcing
-                </h3>
-
-                <p class="mt-1 text-sm ">
-                  we all know its hard being an artist. but the community can
-                  help. post a couple of your songs and potentially get the
-                  funding for your next hit album.
-                </p>
-              </div>
-
-              <a
-                class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
-                href="/services/digital-campaigns"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-10 h-10 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                  />
-                </svg>
-
-                <h3 class="mt-4 text-xl font-bold ">Digital campaigns</h3>
-
-                <p class="mt-1 text-sm ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
-                  quo possimus adipisci distinctio alias voluptatum blanditiis
-                  laudantium.
-                </p>
-              </a>
-
-              <a
-                class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
-                href="/services/digital-campaigns"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-10 h-10 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                  />
-                </svg>
-
-                <h3 class="mt-4 text-xl font-bold ">Digital campaigns</h3>
-
-                <p class="mt-1 text-sm ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
-                  quo possimus adipisci distinctio alias voluptatum blanditiis
-                  laudantium.
-                </p>
-              </a>
-
-              <a
-                class="block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
-                href="/services/digital-campaigns"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-10 h-10 "
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                  />
-                </svg>
-
-                <h3 class="mt-4 text-xl font-bold ">Digital campaigns</h3>
-
-                <p class="mt-1 text-sm ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
-                  quo possimus adipisci distinctio alias voluptatum blanditiis
-                  laudantium.
-                </p>
-              </a>
-            </div>
-
+            </>
             <div class="mt-12 text-center">
               <a
                 class="inline-flex items-center px-8 py-3 mt-8   border border-pink-600 rounded hover:bg-transparent active:text-pink-500 focus:outline-none focus:ring"
