@@ -151,6 +151,7 @@ function code() {
             </a>
           </div>
         </div>
+        {/* CODE SNIPPETS ARE HERE */}
         <div class="flex-1 flex flex-col">
           {/* do not allow Code shadow to extend past last character */}
           <div class="flex-1 overflow-y-auto">
@@ -176,13 +177,13 @@ pragma solidity ^0.8.0;`}
                 />
               </ListItem>
               <Heading className="ml-1 mb-1" as="h2" size="xl">
-                ontract mapping
+                contract mapping
               </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
                   within the contract Melomania {"{ }"} consists of a public
                   string <Code>name</Code> and a public uint{" "}
-                  <Code>songCount</Code> which is set to 0 initially. This also
+                  <Code>songCount</Code> which is set to 0 initially. this also
                   includes a mapping of the Song to the contracts{" "}
                   <Code>song</Code>
                 </Text>
@@ -199,7 +200,7 @@ pragma solidity ^0.8.0;`}
                 />
               </ListItem>
               <Heading className="ml-1 mb-1" as="h2" size="xl">
-                Song Structs
+                song structs
               </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
@@ -225,7 +226,7 @@ pragma solidity ^0.8.0;`}
                 />
               </ListItem>
               <Heading className="ml-1 mb-1" as="h2" size="xl">
-                SongCreated Events
+                events
               </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
@@ -240,7 +241,6 @@ pragma solidity ^0.8.0;`}
         address payable author,
         uint256 likeCount,
         uint256 uploadTime,
-        uint256 totalLikesCount
     );
 
 event ImageTipped(
@@ -251,7 +251,6 @@ event ImageTipped(
         address payable author,
         uint256 likeCount,
         uint256 uploadTime,
-        uint256 totalLikesCount
     );
 
 event ImageLiked(
@@ -262,7 +261,6 @@ event ImageLiked(
         address payable author,
         uint256 likeCount,
         uint256 uploadTime,
-        uint256 totalLikesCount
     );`}
                   language="javascript"
                   showLineNumbers={true}
@@ -270,7 +268,7 @@ event ImageLiked(
                 />
               </ListItem>
               <Heading className="ml-1 mb-1" as="h2" size="xl">
-                Constructor
+                constructor
               </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
@@ -287,7 +285,7 @@ event ImageLiked(
                 />
               </ListItem>
               <Heading className="ml-1 mb-1" as="h2" size="xl">
-                Functions
+                functions
               </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
@@ -356,8 +354,7 @@ function tipImageOwner(uint256 _id) public payable {
             _image.tipAmount,
             _author,
             _image.likeCount,
-            _image.uploadTime,
-            _image.totalLikesCount
+            _image.uploadTime
         );
     }
 
@@ -378,8 +375,7 @@ function likeImage(uint256 _id) public payable {
             _image.tipAmount,
             _author,
             _image.likeCount,
-            _image.uploadTime,
-            _image.totalLikesCount
+            _image.uploadTime
         );
     }`}
                   language="javascript"
@@ -391,7 +387,150 @@ function likeImage(uint256 _id) public payable {
                 putting it all together
               </Heading>
               <ListItem className="ml-4">
-                <Text className="mt-1 " fontSize="2xl"></Text>
+                <Text className="mt-1 " fontSize="2xl">
+                  the following code is the complete contract.
+                </Text>
+                <CopyBlock
+                  text={`// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract Melomania {
+    string public name;
+    uint256 public imageCount = 0;
+    mapping(uint256 => Image) public images;
+
+    struct Image {
+        uint256 id;
+        string hash;
+        string description;
+        uint256 tipAmount;
+        address payable author;
+        uint256 likeCount;
+        uint256 uploadTime;
+    }
+
+    event ImageCreated(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable author,
+        uint256 likeCount,
+        uint256 uploadTime,
+    );
+
+    event ImageTipped(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable author,
+        uint256 likeCount,
+        uint256 uploadTime,
+    );
+
+    event ImageLiked(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable author,
+        uint256 likeCount,
+        uint256 uploadTime,
+    );
+
+    constructor() {
+        name = "Melomania";
+    }
+
+    function uploadImage(string memory _imgHash, string memory _description)
+        public
+    {
+        // Make sure the image hash exists
+        require(bytes(_imgHash).length > 0);
+        // Make sure image description exists
+        require(bytes(_description).length > 0);
+        // Make sure uploader address exists
+        require(msg.sender != address(0));
+
+        // Increment image id
+        imageCount++;
+
+        // Add Image to the contract
+        images[imageCount] = Image(
+            imageCount,
+            _imgHash,
+            _description,
+            0,
+            payable(msg.sender),
+            0,
+            block.timestamp,
+            0
+        );
+        // Trigger an event
+        emit ImageCreated(
+            imageCount,
+            _imgHash,
+            _description,
+            0,
+            payable(msg.sender),
+            0,
+            block.timestamp
+            
+        );
+    }
+
+    function tipImageOwner(uint256 _id) public payable {
+        // Make sure the id is valid
+        require(_id > 0 && _id <= imageCount);
+        // Fetch the image
+        Image memory _image = images[_id];
+        // Fetch the author
+        address payable _author = _image.author;
+        // Pay the author by sending them Ether
+        payable(address(_author)).transfer(msg.value);
+        // Increment the tip amount
+        _image.tipAmount = _image.tipAmount + msg.value;
+        // Update the image
+        images[_id] = _image;
+        // Trigger an event
+        emit ImageTipped(
+            _id,
+            _image.hash,
+            _image.description,
+            _image.tipAmount,
+            _author,
+            _image.likeCount,
+            _image.uploadTime
+        );
+    }
+
+    function likeImage(uint256 _id) public payable {
+        require(_id > 0 && _id <= imageCount);
+        Image memory _image = images[_id];
+        address payable _author = _image.author;
+        payable(address(_author)).transfer(msg.value);
+
+        _image.likeCount = _image.likeCount + msg.value;
+        images[_id] = _image;
+
+        // Trigger an event
+        emit ImageLiked(
+            _id,
+            _image.hash,
+            _image.description,
+            _image.tipAmount,
+            _author,
+            _image.likeCount,
+            _image.uploadTime
+        );
+    }
+}
+`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
               </ListItem>
             </OrderedList>
           </div>
