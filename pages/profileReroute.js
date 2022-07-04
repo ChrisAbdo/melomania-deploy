@@ -18,15 +18,15 @@ import {
 import moment from "moment";
 
 class Profile extends Component {
-  async componentDidMount() {
-    this.setMainEth();
-  }
+  // componentDidMount() {
+  //   this.setMainEth();
+  // }
 
-  // set main eth
-  async setMainEth() {
-    let replaceToken = document.getElementById("replaceToken");
-    replaceToken.innerHTML = "ETHER";
-  }
+  // // set main eth
+  // setMainEth() {
+  //   let replaceToken = document.getElementById("replaceToken");
+  //   replaceToken.innerHTML = "";
+  // }
   render() {
     return (
       <div>
@@ -178,7 +178,6 @@ class Profile extends Component {
                               image.tipAmount.toString(),
                               "Ether"
                             )}{" "}
-                            {""}
                             <small id="replaceToken"> </small>
                           </Td>
                           <Td isNumeric>

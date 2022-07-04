@@ -33,7 +33,7 @@ function Home() {
                 fontWeight="extrabold"
                 className={styles.welcomeText}
               >
-                Welcome to Melomania
+                welcome to melomania
               </Text>
               <Text
                 fontSize="3xl"
