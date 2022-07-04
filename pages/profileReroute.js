@@ -11,13 +11,9 @@ import {
   Th,
   Tbody,
   Td,
-  TableCaption,
-  Tfoot,
   Tabs,
   TabList,
   Tab,
-  TabPanels,
-  TabPanel,
 } from "@chakra-ui/react";
 import moment from "moment";
 

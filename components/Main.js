@@ -7,8 +7,13 @@ import {
   Tabs,
   TabList,
   Tab,
-  TabPanels,
-  TabPanel,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
 } from "@chakra-ui/react";
 import Sidenav from "./Sidenav";
 import DrawerExample from "./Sidenav";
@@ -117,7 +122,7 @@ class Main extends Component {
                         name={image.id}
                         onClick={(event) => {
                           let value = prompt(
-                            "How much ETH would you like to tip?"
+                            "How much  would you like to tip? In ETH/MATIC"
                           );
                           let tipAmount = window.web3.utils.toWei(
                             value,
@@ -132,14 +137,22 @@ class Main extends Component {
                       >
                         TIP
                       </Button>
-                      <Button
-                        type="button"
-                        size="xs"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                      >
-                        More Info
-                      </Button>
+
+                      <Popover>
+                        <PopoverTrigger>
+                          <Button type="button" size="xs">
+                            More Info
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="border border-gray-500">
+                          <PopoverArrow />
+                          <PopoverCloseButton />
+                          <PopoverHeader>
+                            Title: {image.description}
+                          </PopoverHeader>
+                          <PopoverBody>IPFS Hash: {image.hash}</PopoverBody>
+                        </PopoverContent>
+                      </Popover>
                       <br />
                     </li>
                     <li

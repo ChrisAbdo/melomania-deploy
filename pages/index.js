@@ -4,22 +4,28 @@ import Navbar from "../components/HomeNavbar";
 import { Text, Button } from "@chakra-ui/react";
 import { Component, useState } from "react";
 import styles from "../styles/Home.module.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Web3 from "web3";
+import Melomania from "../build/contracts/Melomania.json";
+import { ethers } from "ethers";
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <Head>
-          <title>melomania</title>
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:wght@300&family=Supermercado+One&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+function Home() {
+  const [walletAddress, setWalletAddress] = useState("");
 
-        <main>
-          <div className={styles.welcomeText}>
+  return (
+    <div>
+      <Head>
+        <title>melomania</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins:wght@300&family=Supermercado+One&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+
+      <main>
+        <div className={styles.welcomeText}>
+          <div>
             <Navbar />
             <div className="flex flex-col items-center justify-center h-screen">
               <Text
@@ -27,14 +33,14 @@ class Home extends Component {
                 fontWeight="extrabold"
                 className={styles.welcomeText}
               >
-                Welcome to 0xChange
+                welcome to melomania
               </Text>
               <Text
                 fontSize="3xl"
                 fontWeight="extrabold"
                 className={styles.welcomeText}
               >
-                a one of a kind multi-chain wallet and exchange
+                a multi-chain music marketplace and crowdsourcing platform
               </Text>
               <Text
                 fontSize="3xl"
@@ -43,17 +49,25 @@ class Home extends Component {
               >
                 get started by connecting your wallet{" "}
               </Text>
-              <div className="mt-6">
-                <Link href="/marketplace">
-                  <Button>Marketplace</Button>
-                </Link>
+              <div className="mt-6 ">
+                <div className="flex flex-col items-center justify-center mb-6">
+                  {/* if user is logged in, make button id='revealMe' not hidden*/}
+
+                  <ConnectButton />
+
+                  <div id="connectedButton" className=" mt-6 mb-6">
+                    <Link href="/marketplace">
+                      <Button>Marketplace</Button>
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </main>
-      </div>
-    );
-  }
+        </div>
+      </main>
+    </div>
+  );
 }
 
 export default Home;
