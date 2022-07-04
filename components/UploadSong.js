@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input, Button } from "@chakra-ui/react";
 import styles from "../styles/UploadSong.module.css";
+import DrawerExample from "./Sidenav";
 
 class UploadSong extends Component {
   render() {
@@ -81,12 +82,18 @@ class UploadSong extends Component {
                 required
               />
               <Button
-                className="border border-gray-500"
+                className="border border-gray-500 mr-2"
                 variant="outline"
                 type="submit"
               >
                 Upload
               </Button>
+              {/* <Button
+                onClick={}
+               className="border border-gray-500" variant="outline">
+                Help
+              </Button> */}
+              <DrawerExample />
             </div>
           </form>
         </div>

@@ -19,17 +19,6 @@ import Sidenav from "./Sidenav";
 import DrawerExample from "./Sidenav";
 
 class Main extends Component {
-  // run setMainEth on page load
-  async componentDidMount() {
-    this.setMainEth();
-  }
-
-  // set main eth
-  async setMainEth() {
-    let replaceToken = document.getElementById("replaceToken");
-    replaceToken.innerHTML = "ETHER";
-  }
-
   render() {
     return (
       // div that only allows 3 posts per row.
@@ -187,7 +176,6 @@ class Main extends Component {
                         Like❤️
                       </Button>
 
-                      <DrawerExample />
                       <br />
                     </li>
                     <>

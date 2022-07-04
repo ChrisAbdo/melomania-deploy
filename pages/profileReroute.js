@@ -93,7 +93,9 @@ class Profile extends Component {
                           Published
                         </dt>
                         <dd class="text-xs text-gray-500">
-                          {moment.unix(image.uploadTime).format("MMMM Do YYYY")}
+                          {moment
+                            .unix(image.uploadTime)
+                            .format("MMMM Do YYYY h:mm a")}
                         </dd>
                       </div>
 
