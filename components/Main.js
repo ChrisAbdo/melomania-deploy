@@ -15,14 +15,16 @@ import DrawerExample from "./Sidenav";
 
 class Main extends Component {
   // run setMainEth on page load
-  componentDidMount() {
+  async componentDidMount() {
     this.setMainEth();
   }
 
-  setMainEth() {
+  // set main eth
+  async setMainEth() {
     let replaceToken = document.getElementById("replaceToken");
-    replaceToken.innerHTML = "ETH";
+    replaceToken.innerHTML = "ETHER";
   }
+
   render() {
     return (
       // div that only allows 3 posts per row.
@@ -41,7 +43,7 @@ class Main extends Component {
               <Tab
                 onClick={() => {
                   let replaceToken = document.getElementById("replaceToken");
-                  replaceToken.innerHTML = "ETH";
+                  replaceToken.innerHTML = "ETHER";
                 }}
               >
                 ETHEREUM (ROPSTEN, RINKEBY, GOERLI)

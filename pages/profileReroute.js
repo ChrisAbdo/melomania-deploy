@@ -13,10 +13,24 @@ import {
   Td,
   TableCaption,
   Tfoot,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
 } from "@chakra-ui/react";
 import moment from "moment";
 
 class Profile extends Component {
+  async componentDidMount() {
+    this.setMainEth();
+  }
+
+  // set main eth
+  async setMainEth() {
+    let replaceToken = document.getElementById("replaceToken");
+    replaceToken.innerHTML = "ETHER";
+  }
   render() {
     return (
       <div>
@@ -105,6 +119,28 @@ class Profile extends Component {
             }
           })}
         </div>
+        <div>
+          <Tabs className="mt-2 border-gray-500" isFitted variant="enclosed">
+            <TabList mb="1em">
+              <Tab
+                onClick={() => {
+                  let replaceToken = document.getElementById("replaceToken");
+                  replaceToken.innerHTML = "ETHER";
+                }}
+              >
+                ETHEREUM (ROPSTEN, RINKEBY, GOERLI)
+              </Tab>
+              <Tab
+                onClick={() => {
+                  let replaceToken = document.getElementById("replaceToken");
+                  replaceToken.innerHTML = "MATIC";
+                }}
+              >
+                POLYGON (MUMBAI)
+              </Tab>
+            </TabList>
+          </Tabs>
+        </div>
         <div class="border-b border-gray-500">
           <Text
             className="
@@ -113,7 +149,7 @@ class Profile extends Component {
           font-bold
           mb-2
           mt-2
-          border-t border-gray-500
+           border-gray-500
         "
           >
             Post Stats
@@ -145,8 +181,9 @@ class Profile extends Component {
                             {window.web3.utils.fromWei(
                               image.tipAmount.toString(),
                               "Ether"
-                            )}
-                            {" ETH "}
+                            )}{" "}
+                            {""}
+                            <small id="replaceToken"> </small>
                           </Td>
                           <Td isNumeric>
                             {window.web3.utils.fromWei(
