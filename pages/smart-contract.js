@@ -9,8 +9,10 @@ import {
   ListIcon,
   OrderedList,
   UnorderedList,
+  Heading,
 } from "@chakra-ui/react";
 import styles from "../styles/smart-contract.module.css";
+import { CopyBlock, a11yDark } from "react-code-blocks";
 
 function code() {
   return (
@@ -19,8 +21,8 @@ function code() {
       {/* <div className="flex flex-col items-center justify-center h-screen"> */}
       {/* place sidebar on the left side of the screen */}
       <div className="flex">
-        <div class="flex flex-col justify-between h-screen  border-r">
-          <div class="px-4 py-6">
+        <div class=" flex flex-col justify-between h-screen  border-r">
+          <div class="fixed px-4 py-6">
             <Text fontSize="2xl" fontWeight="extrabold">
               Contents
             </Text>
@@ -53,91 +55,30 @@ function code() {
                 <span class="ml-3 text-sm font-medium"> General </span>
               </a>
 
-              <details class="group">
-                <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-700">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 opacity-75"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
+              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-200 hover:text-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 opacity-75"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
 
-                  <span class="ml-3 text-sm font-medium"> Teams </span>
+                <span class="ml-3 text-sm font-medium"> Teams </span>
+              </summary>
 
-                  <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </summary>
-
-                <nav class="mt-1.5 ml-8 flex flex-col">
-                  <a
-                    href=""
-                    class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5 opacity-75"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                      />
-                    </svg>
-
-                    <span class="ml-3 text-sm font-medium"> Banned Users </span>
-                  </a>
-
-                  <a
-                    href=""
-                    class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5 opacity-75"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-
-                    <span class="ml-3 text-sm font-medium"> Calendar </span>
-                  </a>
-                </nav>
-              </details>
+              <nav class="mt-1.5 ml-8 flex flex-col"></nav>
 
               <a
                 href=""
-                class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                class="flex items-center px-4 py-2  rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +100,7 @@ function code() {
 
               <a
                 href=""
-                class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                class="flex items-center px-4 py-2  rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -179,130 +120,32 @@ function code() {
                 <span class="ml-3 text-sm font-medium"> Invoices </span>
               </a>
 
-              <details class="group">
-                <summary class="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5 opacity-75"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
+              <summary class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 opacity-75"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
 
-                  <span class="ml-3 text-sm font-medium"> Account </span>
-
-                  <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </summary>
-
-                <nav class="mt-1.5 ml-8 flex flex-col">
-                  <a
-                    href=""
-                    class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5 opacity-75"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-                      />
-                    </svg>
-
-                    <span class="ml-3 text-sm font-medium"> Details </span>
-                  </a>
-
-                  <a
-                    href=""
-                    class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="w-5 h-5 opacity-75"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-
-                    <span class="ml-3 text-sm font-medium"> Security </span>
-                  </a>
-
-                  <form action="/logout">
-                    <button
-                      type="submit"
-                      class="flex items-center w-full px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5 opacity-75"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                        />
-                      </svg>
-
-                      <span class="ml-3 text-sm font-medium"> Logout </span>
-                    </button>
-                  </form>
-                </nav>
-              </details>
+                <span class="ml-3 text-sm font-medium"> Account </span>
+              </summary>
             </nav>
           </div>
 
-          <div class="sticky inset-x-0 bottom-0 border-t border-gray-100">
-            <a
-              href=""
-              class="flex items-center p-4 bg-white hover:bg-gray-50 shrink-0"
-            >
-              <img
-                class="object-cover w-10 h-10 rounded-full"
-                src="https://www.hyperui.dev/photos/man-4.jpeg"
-                alt="Simon Lewis"
-              />
-
+          <div class="text-transparent  inset-x-0 bottom-0 border-t border-gray-100">
+            <a href="" class="flex items-center p-4  hover:bg-gray-50 shrink-0">
               <div class="ml-1.5">
                 <p class="text-xs">
-                  <strong class="block font-medium">Simon Lewis</strong>
-
-                  <span> simonlewis@fakemail.com </span>
+                  <span> ~~~~~~~~~~~~~~~~~~~~~~~~~~~ </span>
                 </p>
               </div>
             </a>
@@ -314,15 +157,243 @@ function code() {
             <Text className="ml-2 border-b border-gray-500" fontSize="4xl">
               melomania.sol
             </Text>
-            <UnorderedList>
+            <OrderedList>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                introduction
+              </Heading>
               <ListItem className="ml-4">
                 <Text className="mt-1 " fontSize="2xl">
                   the contract begins by specifying the license identifier and
-                  the version of solidity that the contract is
+                  the version of solidity that the contract is, in this case MIT
+                  license and version ^0.8.0
                 </Text>
-                <Code>contract Melomania</Code>
+                <CopyBlock
+                  text={`// SPDX-License-Identifier: MIT 
+pragma solidity ^0.8.0;`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
               </ListItem>
-            </UnorderedList>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                ontract mapping
+              </Heading>
+              <ListItem className="ml-4">
+                <Text className="mt-1 " fontSize="2xl">
+                  within the contract Melomania {"{ }"} consists of a public
+                  string <Code>name</Code> and a public uint{" "}
+                  <Code>songCount</Code> which is set to 0 initially. This also
+                  includes a mapping of the Song to the contracts{" "}
+                  <Code>song</Code>
+                </Text>
+                <CopyBlock
+                  text={`contract Melomania {
+  string public name;
+  uint256 public imageCount = 0;
+  mapping(uint256 => Image) public images;
+  ...
+  }`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
+              </ListItem>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                Song Structs
+              </Heading>
+              <ListItem className="ml-4">
+                <Text className="mt-1 " fontSize="2xl">
+                  the song struct contains the following fields:{" "}
+                  <Code>
+                    id, hash, description, tipAmount, author, likeCount,
+                    uploadTime
+                  </Code>
+                </Text>
+                <CopyBlock
+                  text={`struct Image {
+        uint256 id;
+        string hash;
+        string description;
+        uint256 tipAmount;
+        address payable author;
+        uint256 likeCount;
+        uint256 uploadTime;
+}`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
+              </ListItem>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                SongCreated Events
+              </Heading>
+              <ListItem className="ml-4">
+                <Text className="mt-1 " fontSize="2xl">
+                  each event takes in the same parameters as the song struct
+                </Text>
+                <CopyBlock
+                  text={`event ImageCreated(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable author,
+        uint256 likeCount,
+        uint256 uploadTime,
+        uint256 totalLikesCount
+    );
+
+event ImageTipped(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable author,
+        uint256 likeCount,
+        uint256 uploadTime,
+        uint256 totalLikesCount
+    );
+
+event ImageLiked(
+        uint256 id,
+        string hash,
+        string description,
+        uint256 tipAmount,
+        address payable author,
+        uint256 likeCount,
+        uint256 uploadTime,
+        uint256 totalLikesCount
+    );`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
+              </ListItem>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                Constructor
+              </Heading>
+              <ListItem className="ml-4">
+                <Text className="mt-1 " fontSize="2xl">
+                  the constructor is simple, simply setting the name of the
+                  contract
+                </Text>
+                <CopyBlock
+                  text={`constructor() {
+  name = "Melomania";
+}`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
+              </ListItem>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                Functions
+              </Heading>
+              <ListItem className="ml-4">
+                <Text className="mt-1 " fontSize="2xl">
+                  the following functions are available:{" "}
+                  <Code>uploadSong()</Code>,<Code>tipSongOwner()</Code>,
+                  <Code>likeSong()</Code>. these functions pass through the song
+                  struct and the song id to the contract and then call the
+                  events.
+                </Text>
+                <CopyBlock
+                  text={`function uploadImage(string memory _imgHash, string memory _description)
+        public
+    {
+        // Make sure the image hash exists
+        require(bytes(_imgHash).length > 0);
+        // Make sure image description exists
+        require(bytes(_description).length > 0);
+        // Make sure uploader address exists
+        require(msg.sender != address(0));
+
+        // Increment image id
+        imageCount++;
+
+        // Add Image to the contract
+        images[imageCount] = Image(
+            imageCount,
+            _imgHash,
+            _description,
+            0,
+            payable(msg.sender),
+            0,
+            block.timestamp,
+            0
+        );
+        // Trigger an event
+        emit ImageCreated(
+            imageCount,
+            _imgHash,
+            _description,
+            0,
+            payable(msg.sender),
+            0,
+            block.timestamp,
+            0
+        );
+    }
+
+function tipImageOwner(uint256 _id) public payable {
+        // Make sure the id is valid
+        require(_id > 0 && _id <= imageCount);
+        // Fetch the image
+        Image memory _image = images[_id];
+        // Fetch the author
+        address payable _author = _image.author;
+        // Pay the author by sending them Ether
+        payable(address(_author)).transfer(msg.value);
+        // Increment the tip amount
+        _image.tipAmount = _image.tipAmount + msg.value;
+        // Update the image
+        images[_id] = _image;
+        // Trigger an event
+        emit ImageTipped(
+            _id,
+            _image.hash,
+            _image.description,
+            _image.tipAmount,
+            _author,
+            _image.likeCount,
+            _image.uploadTime,
+            _image.totalLikesCount
+        );
+    }
+
+function likeImage(uint256 _id) public payable {
+        require(_id > 0 && _id <= imageCount);
+        Image memory _image = images[_id];
+        address payable _author = _image.author;
+        payable(address(_author)).transfer(msg.value);
+
+        _image.likeCount = _image.likeCount + msg.value;
+        images[_id] = _image;
+
+        // Trigger an event
+        emit ImageLiked(
+            _id,
+            _image.hash,
+            _image.description,
+            _image.tipAmount,
+            _author,
+            _image.likeCount,
+            _image.uploadTime,
+            _image.totalLikesCount
+        );
+    }`}
+                  language="javascript"
+                  showLineNumbers={true}
+                  theme={a11yDark}
+                />
+              </ListItem>
+              <Heading className="ml-1 mb-1" as="h2" size="xl">
+                putting it all together
+              </Heading>
+              <ListItem className="ml-4">
+                <Text className="mt-1 " fontSize="2xl"></Text>
+              </ListItem>
+            </OrderedList>
           </div>
         </div>
       </div>
