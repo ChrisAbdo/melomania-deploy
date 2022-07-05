@@ -21,48 +21,6 @@ function Home() {
         />
       </Head>
 
-      {/* <main>
-        <div className={styles.welcomeText}>
-          <div>
-            <Navbar />
-            <div className="flex flex-col items-center justify-center h-screen">
-              <Text
-                fontSize="6xl"
-                fontWeight="extrabold"
-                className={styles.welcomeText}
-              >
-                welcome to melomania
-              </Text>
-              <Text
-                fontSize="3xl"
-                fontWeight="extrabold"
-                className={styles.welcomeText}
-              >
-                a multi-chain music marketplace and crowdsourcing platform
-              </Text>
-              <Text
-                fontSize="3xl"
-                fontWeight="extrabold"
-                className={styles.welcomeText}
-              >
-                get started by connecting your wallet{" "}
-              </Text>
-              <div className="mt-6 ">
-                <div className="flex flex-col items-center justify-center mb-6">
-
-                  <ConnectButton />
-
-                  <div id="connectedButton" className=" mt-6 mb-6">
-                    <Link href="/marketplace">
-                      <Button>Marketplace</Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main> */}
       <Navbar />
       <div className={styles.headerText}>
         <section
@@ -82,7 +40,7 @@ function Home() {
             </div>
 
             <>
-              <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
+              <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 ">
                 <div class="cursor-default block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10">
                   <GiMusicalNotes className="h-7 w-7" />
 
@@ -128,7 +86,7 @@ function Home() {
               <Divider className="mt-8" />
               <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 <div
-                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
+                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
                   // on click, redirect to questions page
                   onClick={() => {
                     window.location.href = "/questions";
@@ -147,7 +105,7 @@ function Home() {
                 </div>
 
                 <div
-                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
+                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10  bg-gradient-to-r from-purple-600 via-blue-500 to-green-300"
                   onClick={() => {
                     window.location.href = "/smart-contract";
                   }}
@@ -168,7 +126,7 @@ function Home() {
                   onClick={() => {
                     window.location.href = "/tech-stack";
                   }}
-                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10"
+                  class="cursor-pointer block p-8 transition border border-gray-800 shadow-xl rounded-xl hover:shadow-gray-500/10 hover:border-gray-500/10  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
                 >
                   <BsStack className="h-7 w-7" />
 

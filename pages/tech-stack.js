@@ -67,6 +67,8 @@ function techStack() {
                         "ease-in-out",
                         "delay-150"
                       );
+
+                    document.getElementById;
                   }}
                   class="ml-3 text-sm font-medium focus:outline-none "
                 >
