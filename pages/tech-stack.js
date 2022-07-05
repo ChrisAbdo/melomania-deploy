@@ -47,9 +47,9 @@ function techStack() {
                           "delay-150"
                         );
                     }
-                    if (document.getElementById("front-end")) {
+                    if (document.getElementById("testing")) {
                       document
-                        .getElementById("front-end")
+                        .getElementById("testing")
                         .classList.remove(
                           "bg-indigo-500",
                           "duration-1",
